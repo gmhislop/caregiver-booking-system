@@ -1,0 +1,87 @@
+.match-container{
+    background-color: #EEEEEE;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.match-container .table{
+    background-color: white;
+    border-radius: .5rem;
+    width: 75%;
+    height: 50rem;
+    padding: 1.5rem;
+    color: #818c9d;
+    gap: .8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-container .table .table-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #818c9d;
+    margin-bottom: 2rem;
+}
+
+.match-container .table .table-head .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.match-container .table .table-body .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.match-container .table .table-body button{
+    background-color: #92B4EC;
+    border: none;
+    border-radius: .4rem;
+    color: white;
+    font-weight: 500;
+    padding: 1rem .5rem;
+    cursor: pointer;
+}
+
+
+.match-container .table .table-body .pendingStatus{
+    background-color: orange;
+}
+
+.match-container .table .table-body .cancel{
+    background-color: transparent;
+    border: 1px solid #818c9d;
+    color: #818c9d;
+}
+
+.match-container .table .table-body .confirmedStatus{
+    background-color: rgb(91, 192, 91);
+}
+
+.match-container .table .table-body .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.match-container .table .table-body{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #f3f8ff;
+    padding-block: 1rem;
+    border-radius: .5rem;
+    align-items: center;
+}
+
+.match-container .table .table-content{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    overflow: scroll;
+}

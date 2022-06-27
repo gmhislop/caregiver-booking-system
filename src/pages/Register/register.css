@@ -1,0 +1,88 @@
+.register-container{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: #EEEEEE;
+}
+
+.register-container .form-container{
+	position: absolute;
+	height: 60%;
+	width: 60rem;
+	top: 50%;
+	left: 50%;
+	background-color: white;
+	transform: translate(-50%, -50%);
+	display: flex;
+	color: #818c9d;
+	border-radius: 1rem;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.register-container .form-container .left-panel{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	gap: .6rem;
+}
+
+.register-container .form-container .left-panel .error{
+	background-color: rgba(255, 0, 0, 0.291);
+	width: 20rem;
+	padding-block: .8rem;
+	text-align: center;
+	border-radius: .4rem;
+	color: rgba(38, 38, 38, 0.429);
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+.register-container .form-container .left-panel input{
+	height: 3rem;
+	padding: 1rem;
+	width: 20rem;
+	border: none;
+	background-color: #eee;
+	border-radius: .4rem;
+}
+
+.register-container .form-container .left-panel button{
+	height: 3rem;
+	padding: 1rem;
+	width: 20rem;
+	border: none;
+	background-color: #92B4EC;
+	border-radius: .4rem;
+	color: white;
+	font-weight: bold;
+}
+
+.register-container .form-container .right-panel{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	background-color: #92B4EC;
+	color: white;
+	font-weight: bold;
+	border-bottom-right-radius: 1rem;
+	border-top-right-radius: 1rem;
+}
+
+.toggle-password-visibility{
+	position: absolute;
+	top: 16.5em;
+	left: 23rem;
+}
+
+.toggle-confirm-password-visibility{
+	position: absolute;
+	top: 20rem;
+	left: 23rem;
+}

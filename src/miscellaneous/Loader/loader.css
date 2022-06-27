@@ -1,0 +1,8 @@
+#container{ 
+    backdrop-filter: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000;
+}

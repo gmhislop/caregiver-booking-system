@@ -1,0 +1,171 @@
+.dashboard-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+    cursor: default;
+}
+
+.flex-container{
+    display: flex;
+    height: 80%;
+    width: 90%;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.flex-container .item{
+    display: flex;
+    gap: .8rem;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1.2rem;
+    color: #818c9d;
+}
+
+.right{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.right .right-data{
+    width: 40rem;
+}
+
+.left{
+    display: flex;
+    gap: 2rem;
+    flex: 2;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+
+.left .left-item-1{
+    flex: 2;
+}
+
+.left .left-item-2{
+    flex: 1;
+}
+
+.left .item .table .table-body:hover{
+    background-color: #dde5f1;
+    transition: all .5s ease;
+}
+
+.left .left-item-1 .table{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    overflow: hidden;
+}
+
+
+.left .left-item-1 h3{
+    font-size: 1.3rem;
+    text-align: center;
+    padding-block: 1.2rem;
+}
+
+.left .left-item-1 .table-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.left .left-item-1 .table-head .table-data{
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.left .left-item-1 .table .table-body{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #f3f8ff;
+    padding-block: 1.2rem;
+    border-radius: .5rem;
+}
+
+.left .left-item-1 .table .table-body .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.left .left-item-2 .table{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    overflow: hidden;
+}
+
+.left .left-item-2 h3{
+    font-size: 1.3rem;
+    text-align: center;
+    padding-block: 1.2rem;
+}
+
+.left .left-item-2 .table .table-body{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #f3f8ff;
+    padding: 1rem;
+    border-radius: .5rem;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.left .left-item-2 .table .table-body .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.left .left-item-2 .table .table-body .image img{
+    border-radius: 50%;
+    border: 2px solid #818c9d;
+}
+.left .left-item-2 .table .table-body .name{
+    flex: 1;
+}
+.left .left-item-2 .table .table-body .price{
+    flex: 1;
+}
+
+.left .left-item-2 .table-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.left .left-item-2 .table-head .table-data{
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.left .item .table .table-content{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    overflow: scroll;
+    height: 100%;
+}
+
+
+

@@ -1,0 +1,67 @@
+.caregiver-container{
+    background-color: #EEEEEE;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.caregiver-container .table{
+    background-color: white;
+    border-radius: .5rem;
+    width: 75%;
+    height: 50rem;
+    padding: 1.5rem;
+    color: #818c9d;
+    gap: .8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.caregiver-container .table .table-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #818c9d;
+    margin-bottom: 2rem;
+}
+
+.caregiver-container .table .table-head .table-data{
+    flex: 1;
+    text-align: center;
+}
+
+.caregiver-container .table .table-body .image{
+    border-radius: 50%;
+    border: 2px solid #818c9d;
+}
+
+.caregiver-container .table .table-body .table-data{
+    text-align: center;
+    flex: 1;
+}
+
+.caregiver-container .table .table-body{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #f3f8ff;
+    padding-block: 1rem;
+    border-radius: .5rem;
+    align-items: center;
+}
+
+.caregiver-container .table .table-body:hover{
+    background-color: #dde4ee;
+    transition: all .5s ease;
+}
+
+.caregiver-container .table .table-content{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    overflow: scroll;
+}

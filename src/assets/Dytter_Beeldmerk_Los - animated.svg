@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 800 800" orig_viewBox="0 0 738 762" style="enable-background:new 0 0 772 762;"
+  orig_style="enable-background:new 0 0 738 762;" xml:space="preserve">
+  <style type="text/css">
+    .box {
+      fill: #dddddd;
+    }
+
+    .ring {
+      fill: none;
+      /* stroke: #0000FF; */
+      stroke: #0000FF;
+      stroke-width: 25;
+      stroke-miterlimit: 10;
+    }
+
+    .planet {
+      fill: #E72A2E;
+      transform-origin: 50% 50%;
+    }
+
+    .planetAnim {
+      /* animation: orbit 2s normal linear infinite; */
+      animation: orbit 2s normal ease infinite;
+    }
+
+    .rocket {
+      fill: #0000FF;
+      transform: translate(10px, 10px);
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      /* 20% {
+        transform: rotate(0deg);
+      }
+
+      30% {
+        transform: rotate(180deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      70% {
+        transform: rotate(180deg);
+      }
+
+      80% {
+        transform: rotate(360deg);
+      } */
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <g id="viewboxGroup">
+    <rect class="box" x="0" y="0" width="100%" height="100%" />
+  </g>
+  <g id="ringGroup">
+    <!-- <circle class="ring" cx="392.8" cy="383.1" r="250.7" /> -->
+    <circle class="ring" cx="400" cy="400" r="250" />
+  </g>
+  <g id="planetGroup">
+    <!-- <circle class="planet" cx="635.6" cy="386.5" r="81.1" /> -->
+    <circle class="planet planetAnim" cx="642" cy="400" r="80" />
+  </g>
+  <g id="rocketGroup">
+    <path class="rocket" d="M272.6,630.7c-0.4,66.8-54.7,120.9-121.7,120.9c-67.2,0-121.7-54.5-121.7-121.7c0-67.2,54.5-121.7,121.7-121.7
+		c67,0,121.3-54.1,121.7-120.9v-1.6c-0.4-66.8-54.7-120.9-121.7-120.9v0c-67.2,0-121.7-54.5-121.7-121.7
+		c0-67.2,54.5-121.7,121.7-121.7c67,0,121.3,54.1,121.7,120.9v1.6c0.4,66.9,54.7,120.9,121.7,120.9v0c67.2,0,121.7,54.5,121.7,121.7
+		c0,67.2-54.5,121.7-121.7,121.7c-67,0-121.3,54.1-121.7,120.9L272.6,630.7z" />
+  </g>
+</svg>
