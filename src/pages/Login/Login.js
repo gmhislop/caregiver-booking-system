@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
 import { Loader } from '../../miscellaneous/Loader/Loader';
 import './login.css'
-
+import logo from '../../assets/Dytter_Logo_2022.svg'
 import { MdOutlineVisibility } from 'react-icons/md'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
 
@@ -89,7 +89,10 @@ export const Login = () => {
 						<Link to='/register'>Register</Link>
 					</div>
 					<div className="right-panel">
-						<h1>HTML CSS LOGIN FORM</h1>
+					<img 
+                    src={logo} alt="logo" 
+                    className='logo'>
+					</img>
 					</div>
 				</div>
 			)}

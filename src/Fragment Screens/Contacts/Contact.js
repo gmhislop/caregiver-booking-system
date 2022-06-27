@@ -12,7 +12,6 @@ export const Contact = () => {
     const [subject, setSubject] = useState('');
     const [error, setError] = useState();
 
-    // NEEDED ACTION. I'LL GUIDE YOU IF YOU CAN'T FIGURE THIS OUT
     const sendEmail = () => {
 
         // CHECK IF THE FIELDS ARE EMPTY

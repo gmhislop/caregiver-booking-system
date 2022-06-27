@@ -5,7 +5,7 @@ import { auth, db } from '../../firebase-config';
 import './register.css';
 import { setDoc, doc } from 'firebase/firestore'
 import { Loader } from '../../miscellaneous/Loader/Loader';
-
+import logo from '../../assets/Dytter_Logo_2022.svg'
 import { MdOutlineVisibility } from 'react-icons/md'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
 
@@ -38,9 +38,9 @@ export const Register = () => {
 			return setError('Password do not match')
 		}
 
-		// SET THE PASSWORD TO BE AT LEAST 6 CHARACTERS LONG
-		if(password.length < 6){
-			return setError('Password must be at least 6 characters');
+		// SET THE PASSWORD TO BE AT LEAST 10 CHARACTERS LONG
+		if(password.length < 10){
+			return setError('Password must be at least 10 characters');
 		}
 
 		// CREATE USER IN A TRY CATCH BLOCK
@@ -128,7 +128,10 @@ export const Register = () => {
 						<Link to='/login'>Login</Link>
 					</div>
 					<div className="right-panel">
-						<h1>HTML CSS LOGIN FORM</h1>
+						<img 
+                    src={logo} alt="logo" 
+                    className='logo'>
+					</img>
 					</div>
 				</div>
 			)}
