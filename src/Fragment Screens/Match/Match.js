@@ -8,45 +8,41 @@ import { Loader } from '../../miscellaneous/Loader/Loader';
 export const Match = () => {
 
     // INITIALIZE VARIABLES
-    const [matchedData, setMatchedData] = useState([]);
     const [remainingTime, setRemainingTime] = useState(10);
     const [clickedUser, setClickedUser] = useState(null);
     const [onTimer, setOnTimer] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [matchedData, setMatchedData] = useState([]);
 
     // THIS WILL BE USED TO KEEP TRACK OF THE CONFIRM BUTTON CHANGES SO THAT THE PAGE WILL BE RE-RENDERED AND NEW DATA WILL BE DISPLAYED
     const [status, setStatus] = useState(false);
 
-    // FETCH THE MATCHED DATA FROM THE DATABASE
     useEffect(() => {
         setLoading(true);
-
-        const fetchMatch = async () => {
+        const fetchMatched = async() => {
             await getDocs(collection(db, 'matched'))
-                .then(data => {
-                    console.log(data.docs)
-                    setMatchedData(data.docs.map(doc => ({ ...doc.data() })))
-                    setLoading(false);
-                })
-                .catch(err => {
-                    console.log(err)
-                    setLoading(false);
-                });
+            .then((res) => {
+                setMatchedData(res.docs.map((doc) => ({ ...doc.data() })));
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setLoading(false);
+            })
         }
-
-        fetchMatch();
+        fetchMatched();
     }, [status])
 
     useEffect(() => {
          // LOGIC TO HANDLE THE CONFIRM BUTTON
         const confirmMatch = async () => {        
-            // CUSTOM EMAIL OBJECT. THIS IS THE EMAIL THAT WILL BE SENT TO THE CAREGIVERS. CHANGE THE TO_EMAIL TO THEIR RESPECTIVE EMAIL -> data.email
+            // CUSTOM EMAIL OBJECT. THIS IS THE EMAIL THAT WILL BE SENT TO THE CAREGIVERS. CHANGE THE TO_EMAIL TO THEIR RESPECTIVE EMAIL
             const info = {
                 message: `Click the link to confirm http://localhost:3000/bookings/confirmation/${clickedUser.userId}`,
-                to_email: 'g.hislop@live.nl', // Change this line with the email of the caregiver or own email for testing purpose. Pass 'clickedUser.email' to automate that
-                from_email: 'Dytter direct'
+                to_email: 'jazencode@gmail.com', // Change this line with the email of the caregiver. Pass clickedUser.email to automate that
+                from_email: 'Healthcare',
             }
- 
+
             // SEND THE EMAIL USING EMAIL JS
             emailjs.send('service_34j7jhp', 'template_6p7p0lz', info, 's4i9jk7PO-pMqAN4h')
                 .then(res => console.log(res))
@@ -62,16 +58,19 @@ export const Match = () => {
 
         setOnTimer(false);
 
-        if(clickedUser !== null){
+        // IF THERE IS A CLICKED USER, RUN THE TIMER
+        if(clickedUser !== null || clickedUser?.status !== 'unconfirmed' || clickedUser?.status !== 'pending'){
             setOnTimer(true);
             const interval = setInterval(() => {
                 setRemainingTime(time => time - 1);
     
+                // PERFORM THESE WHEN THE TIMER RUNS OUT
                 if(remainingTime === 0){
                     confirmMatch();
                     setClickedUser(null);
                     setRemainingTime(10);
                     setOnTimer(false);
+                    setLoading(true);
                 }
             }, 1000)
             
@@ -81,8 +80,6 @@ export const Match = () => {
             setOnTimer(false);
         }
     }, [remainingTime, clickedUser, status])
-
-    console.log(remainingTime);
     
     return (
         <div className='match-container'>
@@ -120,6 +117,10 @@ export const Match = () => {
                                                 setClickedUser(data);
                                                 setRemainingTime(10);
                                             }
+                                        }}
+                                        onDoubleClick={() => {
+                                            setClickedUser(data);
+                                            setRemainingTime(0);
                                         }}
                                     >
                                         {

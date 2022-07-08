@@ -1,7 +1,12 @@
 import React from 'react'
+import { useApp } from '../../context/AppContext';
 import './bookings.css'
 
-export const Bookings = ({ bookings }) => {
+export const Bookings = () => {
+
+    const {
+		bookings,
+	} = useApp();
 
     return (
         <div className='bookings-container'>

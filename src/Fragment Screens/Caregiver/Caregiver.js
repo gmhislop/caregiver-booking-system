@@ -1,7 +1,12 @@
 import React from 'react'
+import { useApp } from '../../context/AppContext';
 import './caregiver.css'
 
-export const Caregiver = ({ caregivers }) => {
+export const Caregiver = () => {
+
+    const { 
+		caregivers,
+	} = useApp();
 
     return (
         <div className='caregiver-container'>
@@ -17,7 +22,7 @@ export const Caregiver = ({ caregivers }) => {
                 <div className="table-content">
                     {caregivers.map((data, index) => {
                         return(
-                            <div className='table-body'>
+                            <div className='table-body' key={index}>
                                 <div className='table-data'>{data.userId}</div>
                                 <div className='table-data'>
                                     <img className='image' src={data.thumbnail} alt='thumbnail'/>

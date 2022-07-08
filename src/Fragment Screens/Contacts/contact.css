@@ -24,9 +24,9 @@
     width: 35rem;
     border-radius: .5rem;
     padding: 1rem 3.5rem;
-    height: 50rem;
+    padding-bottom: 4rem;
     color: #818c9d;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .contact-container form h1{
@@ -41,8 +41,8 @@
 }
 
 .contact-container form .form-group input{
-    height: 2rem;
-    padding: 1.2rem;
+    height: 2.5rem;
+    padding: 1.5rem;
     border-radius: .3rem;
     border: 1px solid #818c9d;
 }
@@ -60,7 +60,7 @@
     height: 5rem;
     border-radius: .3rem;
     border: none;
-    background-color: blue;
+    background-color: #92B4EC;
     color: white;
     font-weight: 600;
 }

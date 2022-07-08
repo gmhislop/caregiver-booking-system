@@ -8,7 +8,6 @@ import { AiFillCamera } from 'react-icons/ai'
 import { UpdatePassword } from '../../components/UpdatePasswordModal/UpdatePassword';
 import { getDownloadURL, list, ref, uploadBytes} from 'firebase/storage';
 
-
 export const Account = () => {
 
     // INITIALIZE VARIABLES
@@ -34,7 +33,7 @@ export const Account = () => {
     // UPDATE THE DOC FROM THE  DATABASE WHEN CLICKED
     const saveChanges = async() => {
         setLoading(true);
-        await updateDoc(doc(db, 'users', currentUser.uid), {
+        await updateDoc(doc(db, 'users', currentUser?.uid), {
             firstName,
             lastName,
             organization,
@@ -52,21 +51,21 @@ export const Account = () => {
             setLoading(true)
 
             // INITIALIZE A REFERENCE TO THE PATH ON THE FIREBASE STORAGE
-            const storageRef = ref(storage, `${currentUser.uid}/${image.name}/profile`);
+            const storageRef = ref(storage, `${currentUser?.uid}/${image.name}/profile`);
 
             // UPLOAD THE IMAGE OT THAT PATH
             uploadBytes(storageRef, image)
 
             // GET THE URL BACK FROM THAT STORAGE. THIS URL IS THE URL OF YOUR UPLOADED IMAGE ON THE WEB. THIS WILL BE USED AS A SOURCE TO AN IMAGE TAG
             .then(() => {
-                list(ref(storage, `${currentUser.uid}/${image.name}`))
+                list(ref(storage, `${currentUser?.uid}/${image.name}`))
                 .then(res => {
                     getDownloadURL(res.items[0])
                     .then(async(url) => {
                         setImageUrl(url);
 
                         // UPDATE THE DEFAULT PROFILE URL TO THE URL OF THE IMAGE YOU UPLOADED
-                        await updateDoc(doc(db, 'users', currentUser.uid), {
+                        await updateDoc(doc(db, 'users', currentUser?.uid), {
                             profileUrl: url
                         })
                         setLoading(false);
@@ -78,24 +77,24 @@ export const Account = () => {
         }
 
         handleChange();
-    }, [image, currentUser.uid])
+    }, [image, currentUser?.uid])
 
     // RUN WHEN THE DATA HAS BEEN UPDATED SO THAT THE PAGE WILL BE RE-RENDERED WITH THE NEW DATA
     useEffect(() => {
         setLoading(true);
         const getUserData = async() => {
-            const {_document} = await getDoc(doc(db, 'users', currentUser.uid))
-            setUsername(_document.data.value.mapValue.fields.username.stringValue);
-            setFirstName(_document.data.value.mapValue.fields.firstName.stringValue);
-            setLastName(_document.data.value.mapValue.fields.lastName.stringValue);
-            setEmail(_document.data.value.mapValue.fields.email.stringValue);
-            setOrganization(_document.data.value.mapValue.fields.organization.stringValue);
-            setImageUrl(_document.data.value.mapValue.fields.profileUrl.stringValue);
+            const {_document} = await getDoc(doc(db, 'users', currentUser?.uid))
+            setUsername(_document?.data.value.mapValue.fields.username.stringValue);
+            setFirstName(_document?.data.value.mapValue.fields.firstName.stringValue);
+            setLastName(_document?.data.value.mapValue.fields.lastName.stringValue);
+            setEmail(_document?.data.value.mapValue.fields.email.stringValue);
+            setOrganization(_document?.data.value.mapValue.fields.organization.stringValue);
+            setImageUrl(_document?.data.value.mapValue.fields.profileUrl.stringValue);
             setLoading(false);
         }
-        
+
         getUserData();
-    }, [isUpdated, currentUser.uid])
+    }, [isUpdated, currentUser?.uid])
 
     return (
         <>

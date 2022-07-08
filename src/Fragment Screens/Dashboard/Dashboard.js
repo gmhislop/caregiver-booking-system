@@ -3,20 +3,22 @@ import './dashboard.css'
 
 import { useState } from 'react'
 import { Pie } from 'react-chartjs-2'
-import { Chart as ChartJS } from 'chart.js/auto'
-import { async } from '@firebase/util'
-import { collection, getDoc, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase-config'
+import { Chart as ChartJS } from 'chart.js/auto' // THIS LINE. THIS IS NEEDED FOR THE CHART TO WORK
+import { useApp } from '../../context/AppContext'
 
-export const Dashboard = ({ caregivers, bookings }) => {
+export const Dashboard = ({ matchedData }) => {
+
+    const { 
+		caregivers,
+		bookings,
+	} = useApp();
 
     // INITIALIZE THE TOP CAREGIVERS
     const [topCaregivers, setTopCaregivers] = useState([]);
-    const [matchedData, setMatchedData] = useState([]);
 
     const pieData = {
         datasets: [{
-            data: [caregivers.length, bookings.length, matchedData.length],
+            data: [caregivers?.length, bookings?.length, matchedData?.length],
             backgroundColor: ['#F2D7D9', '#CDF0EA', '#B1BCE6'],
         }],
         labels: [
@@ -26,43 +28,28 @@ export const Dashboard = ({ caregivers, bookings }) => {
         ]
     };
 
-    useEffect(() => {
-        const fetchMatched = async() => {
-            await getDocs(collection(db, 'matched'))
-            .then((res) => {
-                setMatchedData(res.docs.map((doc) => ({ ...doc.data() })));
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        }
-        fetchMatched();
-    }, [])
-
     // RUN ON RENDER. SORT THE TOP CAREGIVERS BASED ON THEIR COMPLETED BOOKINGS
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     // COPY THE VALUE SO THE ORIGINAL DATA WON'T BE AFFECTED BY ANY ALTERATION
-    //     const caregiversList = [...caregivers];
+        // COPY THE VALUE SO THE ORIGINAL DATA WON'T BE AFFECTED BY ANY ALTERATION
+        const caregiversList = [...caregivers];
 
-    //     // I USED BUBBLE SORT HERE
-    //     let swapped = true;
-    //     do {
-    //         swapped = false;
-    //         for (let j = 0; j < caregiversList.length; j++) {
-    //             if (caregiversList[j]?.completedBookings < caregiversList[j + 1]?.completedBookings) {
-    //                 let temp = caregiversList[j];
-    //                 caregiversList[j] = caregiversList[j + 1];
-    //                 caregiversList[j + 1] = temp;
-    //                 swapped = true;
-    //             }
-    //         }
-    //     } while (swapped);
+        // I USED BUBBLE SORT HERE
+        let swapped = true;
+        do {
+            swapped = false;
+            for (let j = 0; j < caregiversList.length; j++) {
+                if (caregiversList[j]?.completedBookings < caregiversList[j + 1]?.completedBookings) {
+                    let temp = caregiversList[j];
+                    caregiversList[j] = caregiversList[j + 1];
+                    caregiversList[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
 
-    //     setTopCaregivers(caregiversList);
-    // }, [caregivers])
-
-    // console.log(matchedData);
+        setTopCaregivers(caregiversList);
+    }, [caregivers])
 
     return (
         <div className="dashboard-container">

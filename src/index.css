@@ -13,3 +13,16 @@
 ::-webkit-scrollbar{
     display: none;
 }
+
+body .confirmation-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body .confirmation-container img{
+    width: 20rem;
+}
+

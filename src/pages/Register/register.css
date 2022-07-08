@@ -11,7 +11,7 @@
 .register-container .form-container{
 	position: absolute;
 	height: 60%;
-	width: 60rem;
+	width: 30rem;
 	top: 50%;
 	left: 50%;
 	background-color: white;
@@ -29,6 +29,24 @@
 	align-items: center;
 	flex: 1;
 	gap: .6rem;
+}
+
+.register-container .form-container .left-panel .logo{
+	width: 10rem;
+}
+
+.register-container .form-container .left-panel .password{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.register-container .form-container .left-panel .confirmPassword{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 .register-container .form-container .left-panel .error{
@@ -77,12 +95,12 @@
 
 .toggle-password-visibility{
 	position: absolute;
-	top: 16.5em;
-	left: 23rem;
+	right: 0;
+	margin-right: 1rem;
 }
 
 .toggle-confirm-password-visibility{
 	position: absolute;
-	top: 20rem;
-	left: 23rem;
+	right: 0;
+	margin-right: 1rem;
 }

@@ -3,11 +3,16 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
-import { Loader } from '../../miscellaneous/Loader/Loader';
 import './login.css'
-import logo from '../../assets/Dytter_Logo_2022.svg'
+
 import { MdOutlineVisibility } from 'react-icons/md'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
+
+import logo from '../../assets/Dytter_Logo_2022.svg'
+import { useApp } from '../../context/AppContext';
+import { fetchCaregiversData } from '../../miscellaneous/API Fetch/fetchCaregiver';
+import { fetchBookingsData } from '../../miscellaneous/API Fetch/fetchBookings';
+import { matchData } from '../../miscellaneous/API Fetch/matchData';
 
 export const Login = () => {
 
@@ -18,8 +23,18 @@ export const Login = () => {
 	const [ password, setPassword ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [error, setError] = useState();
-	const [loading, setLoading] = useState(false);
 	const [show, setShow] = useState(false);
+
+	// GET THE STATES FROM THE APP PROVIDER
+	const { 
+		setLoading,
+		loading,
+		setCaregivers,
+		setBookings,
+		caregivers,
+		bookings,
+		setMatchedData
+	} = useApp();
 
 	// HANDLE ON FORM SUBMIT
 	const handleSubmit = async() => {
@@ -37,6 +52,10 @@ export const Login = () => {
 			// LOGIN USER
 			await signInWithEmailAndPassword(auth, email, password);
 
+			// FETCH ALL THE DATA NEEDED
+			await fetchCaregiversData(setCaregivers);
+			await fetchBookingsData(setBookings);
+			await matchData(caregivers, bookings, setMatchedData);
 			setLoading(false);
 			navigate('/');
 		} catch (error) {
@@ -60,18 +79,17 @@ export const Login = () => {
 	
 	return (
 		<div className="login-container">
-			{loading ? (
-				<Loader/>
-			) : (
-				<div className="form-container">
-					<div className="left-panel">
-						<h1>Login</h1>
-						{error && <p className='error'>{error}</p>}
-						<input 
-							type="email" 
-							placeholder='Email'
-							onChange={e => setEmail(e.target.value)}
-						/>
+			<div className="form-container">
+				<div className="left-panel">
+					<img src={logo} alt="" className='logo'/>
+					<h1>Login</h1>
+					{error && <p className='error'>{error}</p>}
+					<input 
+						type="email" 
+						placeholder='Email'
+						onChange={e => setEmail(e.target.value)}
+					/>
+					<div className="password">
 						<input 
 							type={show ? 'text' : "password"} 
 							placeholder='Password'
@@ -84,18 +102,16 @@ export const Login = () => {
 								<AiOutlineEyeInvisible onClick={() => setShow(!show)}/>
 							)}
 						</div>
-						<button type='button' onClick={handleSubmit}>LOG IN</button>
-						<p>Already have an account?</p>
-						<Link to='/register'>Register</Link>
 					</div>
-					<div className="right-panel">
-					<img 
-                    src={logo} alt="logo" 
-                    className='logo'>
-					</img>
-					</div>
+					<button type='button' onClick={handleSubmit}>
+						{loading ? (
+							<div className="loading"></div>
+						) : 'Login'}
+					</button>
+					<p>Doesn't have an account yet?</p>
+					<Link to='/register'>Register</Link>
 				</div>
-			)}
+			</div>
 		</div>
 	);
 }

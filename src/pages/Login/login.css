@@ -11,7 +11,7 @@
 .login-container .form-container{
 	position: absolute;
 	height: 60%;
-	width: 60rem;
+	width: 30rem;
 	top: 50%;
 	left: 50%;
 	background-color: white;
@@ -52,33 +52,62 @@
 	border-radius: .4rem;
 }
 
+.login-container .form-container .left-panel input{
+	height: 3rem;
+	padding: 1rem;
+	width: 20rem;
+	border: none;
+	background-color: #eee;
+	border-radius: .4rem;
+}
+
+.login-container .form-container .left-panel .logo{
+	width: 10rem;	
+}
+
+.login-container .form-container .left-panel .password{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .login-container .form-container .left-panel button{
 	height: 3rem;
 	padding: 1rem;
 	width: 20rem;
 	border: none;
-	background-color: blue;
+	background-color: #92B4EC;
 	border-radius: .4rem;
 	color: white;
 	font-weight: bold;
-}
-
-.login-container .form-container .right-panel{
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	flex: 1;
-	background-color: white;
-	color: white;
-	font-weight: bold;
-	border-bottom-left-radius: 1rem;
-	border-top-left-radius: 1rem;
+}
+
+.login-container .form-container .left-panel .loading{
+	display: inline-block;
+	width: 1.8rem;
+	height: 1.8rem;
+	border: 3px solid rgba(255,255,255,.3);
+	border-radius: 50%;
+	border-top-color: #fff;
+	animation: spin 1s ease-in-out infinite;
+	-webkit-animation: spin 1s ease-in-out infinite;
 }
 
 .toggle-visibility{
 	position: absolute;
 	color: #818c9d;
-	right: 6rem;
 	font-size: 1.1rem;
+	right: 0;
+	margin-right: 1rem;
+}
+
+@keyframes spin {
+	to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+	to { -webkit-transform: rotate(360deg); }
 }

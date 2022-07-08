@@ -12,6 +12,7 @@ export const Contact = () => {
     const [subject, setSubject] = useState('');
     const [error, setError] = useState();
 
+    // NEEDED ACTION. I'LL GUIDE YOU IF YOU CAN'T FIGURE THIS OUT
     const sendEmail = () => {
 
         // CHECK IF THE FIELDS ARE EMPTY
@@ -27,7 +28,7 @@ export const Contact = () => {
         //     message
         // }
 
-        // THIS WLL BE SENT THROUGH EMAIL JS. WHAT YOU NEED TO DO IS TO CREATE YOUR OWN ACCOUNT AT EMAIL JS AND COPY ALL THE NEEDED KEYS AS THE PARAMETER
+        // //THIS WLL BE SENT THROUGH EMAIL JS. WHAT YOU NEED TO DO IS TO CREATE YOUR OWN ACCOUNT AT EMAIL JS AND COPY ALL THE NEEDED KEYS AS THE PARAMETER
 
         // emailjs.send('service_34j7jhp', 'template_6p7p0lz', info, 's4i9jk7PO-pMqAN4h')
         // .then(res => console.log(res))
@@ -49,34 +50,35 @@ export const Contact = () => {
                 <h1>Technical Support</h1>
                 {error && <p className='error'>{error}</p>}
                 <div className="form-group">
-                    <label htmlFor="name">Name</label>
                     <input 
                         type="text" 
                         name='name'
+                        placeholder='Name'
                         onChange={e => setName(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="subject">Subject</label>
                     <input 
                         type="text" 
                         name='subject'
+                        placeholder='Subject'
                         onChange={e => setSubject(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
                     <input 
                         type="email" 
                         name='email'
+                        placeholder='Email'
                         onChange={e => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="message">Message</label>
+
                     <textarea 
                         type="text" 
                         name='message'
+                        placeholder='Message'
                         onChange={e => setMessage(e.target.value)}
                     />
                 </div>
