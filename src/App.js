@@ -16,7 +16,7 @@ export const App = () => {
       <Routes>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/' element={currentUser ? <MainPage/> : <Navigate to='/login'/ >}/>
+        <Route path='/' element={currentUser ? <MainPage/> : <Navigate to='/login'/>}/>
         <Route path='/bookings/confirmation/:id' element={<Confirmation/>}/>
       </Routes>
     </>

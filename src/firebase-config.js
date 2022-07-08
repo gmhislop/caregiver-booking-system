@@ -3,8 +3,10 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage'
 
+// THESE KEYS SHOULDN'T BE EXPOSED IN THE CODE PUT THIS IN AN ENV VARIABLE
+
 export const app = initializeApp({
-    apiKey: "AIzaSyDl5EuuLiUt_lmrtvvtfyBbk3cjdpvIqMU",
+    apiKey: "{process.env.REACT_APP_API_KEY}", 
     authDomain: "caregivers-auth-dev.firebaseapp.com",
     projectId: "caregivers-auth-dev",
     storageBucket: "caregivers-auth-dev.appspot.com",
@@ -15,3 +17,5 @@ export const app = initializeApp({
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+
+// AIzaSyDl5EuuLiUt_lmrtvvtfyBbk3cjdpvIqMU
