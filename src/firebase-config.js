@@ -17,5 +17,3 @@ export const app = initializeApp({
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-
-// AIzaSyDl5EuuLiUt_lmrtvvtfyBbk3cjdpvIqMU
