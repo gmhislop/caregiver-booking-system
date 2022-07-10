@@ -9,7 +9,7 @@ export const UpdatePassword = ({ setIsToggled }) => {
 
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
-    const [error, setError] = useState();
+    const [setError] = useState();
     const [loading, setLoading] = useState(false);
 
     const changePassword = async() => {
