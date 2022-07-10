@@ -3,7 +3,7 @@ In order to counteract the shortage in care, care institutions often work with t
 
 Firebase backend is used for registering, logging in and handling authentication. The API Key for Firebase is generated during application development at https://firebase.google.com/. The Firebase configuration is included in the firebase.js file, the data needed to connect the application to Firebase is stored in the .env file. Variables contained in the .env file must be prefixed with REACT_APP_, otherwise they will be ignored. The data of the caregivers and bookings has been established with the help of Heroku.
 
-### Prerequisite for Windows
+### Prerequisite
 To install React on Windows, your system will require the minimum configuration as below:
 
 Windows XP, Windows 7 (32/64 bit) or higher
@@ -23,13 +23,13 @@ To be able to use the webapplication locally, the following steps can be followe
 2. Use the npm install command to download all dependencies.
 3. Create a file called  .env in the root of your project. Complete the parameters as described in the file .env.  
 
-Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
+Example: `REACT_APP_MY_API_KEY={{INSERT_APIKEY}}`
 
 ### Application Guide
 * The homepage overview of recently made bookings and top performing care providers.
 * You can log in or create an account via the Login page. In addition, a test account can also be used:<br>
-	username test@test.nl<br>
-	password: Test123!
+	`username test@test.nl`<br>
+	`password: Test123!`
 * Creating an account requires a unique username, unique email address and password.
 * After creating an account, you can log in to the web application.
 * Services can be assigned to available care providers via the broking platform.
@@ -38,7 +38,8 @@ Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
 ### TESTING
 After logging in with your account you can change the emailaddress to your own at ./match page line 42.
 
-'to_email: clickedUser.email,' // change 'clickedUser.email' to your own e-mail. 'clickedUser.email' to automates the email put your own email here to test
+'
+`to_email: clickedUser.email,` // change 'clickedUser.email' to your own e-mail. '`clickedUser.email`' to automates the email put your own email here to test
 
 =======
 After that you can register 
