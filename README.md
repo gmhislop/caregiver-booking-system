@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+### Introduction Healthcare Bookings Platform
+In order to counteract the shortage in care, care institutions often work with the deployment of independent care providers. For that reason, I think it is a good idea to create a booking system for available services and available caregivers. To put it very simply, data is exported and imported within a dashboard I compiled. And on the platform, the user can make a match by pressing a button. The caregiver receives a notification by email and by accepting this notification, the service is confirmed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Firebase backend is used for registering, logging in and handling authentication. The API Key for Firebase is generated during application development at https://firebase.google.com/. The Firebase configuration is included in the firebase.js file, the data needed to connect the application to Firebase is stored in the .env file. Variables contained in the .env file must be prefixed with REACT_APP_, otherwise they will be ignored. The data of the caregivers and bookings has been established with the help of Heroku.
 
-## Available Scripts
+### Prerequisite for Windows
+To install React on Windows, your system will require the minimum configuration as below:
 
-In the project directory, you can run:
+Windows XP, Windows 7 (32/64 bit) or higher
+Minimum 4 GB RAM and higher
+10 GB available space on the hard disk
+At least one Internet Browser e.g. Chrome, Firefox, Microsoft Edge etc.
+Node.js
+Active internet connection minimum speed 512kbps and above.
+At least one installed code Editor to test and debug your code e.g.  
+* Atom
+* Sublime
+* Visual studio code
 
-### `npm start`
+### Installation guide 
+To be able to use the webapplication locally, the following steps can be followed.
+1. Clone the web app's Github repository.
+2. Use the npm install command to download all dependencies.
+3. Create a file called  .env in the root of your project. Complete the parameters as described in the file .env.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Application Guide
+* The homepage overview of recently made bookings and top performing care providers.
+* You can log in or create an account via the Login page. In addition, a test account can also be used:
+	username test@test.nl
+	password: Test123!
+* Creating an account requires a unique username, unique email address and password.
+* After creating an account, you can log in to the web application.
+* Services can be assigned to available care providers via the broking platform.
+* When the caregiver accepts this service, the booking status will change to confirmed.
 
-### `npm test`
+### TESTING
+After logging in with your account you can change the emailaddress to your own at ./match page line 42.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+to_email: clickedUser.email, // change clickedUser.email to your own e-mail. clickedUser.email to automates the email put your own email here to test
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After that you can register 
+![](Screenshot 3.png)
+Login
+![](Screenshot 2.png)
+View the match page and send a request.
+![](Screenshot.png)

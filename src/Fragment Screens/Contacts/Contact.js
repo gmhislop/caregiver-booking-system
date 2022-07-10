@@ -12,7 +12,6 @@ export const Contact = () => {
     const [subject, setSubject] = useState('');
     const [error, setError] = useState();
 
-    // NEEDED ACTION. I'LL GUIDE YOU IF YOU CAN'T FIGURE THIS OUT
     const sendEmail = () => {
 
         // CHECK IF THE FIELDS ARE EMPTY
@@ -21,18 +20,9 @@ export const Contact = () => {
             return;
         }
 
-        // const info = {
-        //     name,
-        //     subject,
-        //     email,
-        //     message
-        // }
-
-        // //THIS WLL BE SENT THROUGH EMAIL JS. WHAT YOU NEED TO DO IS TO CREATE YOUR OWN ACCOUNT AT EMAIL JS AND COPY ALL THE NEEDED KEYS AS THE PARAMETER
-
-        // emailjs.send('service_34j7jhp', 'template_6p7p0lz', info, 's4i9jk7PO-pMqAN4h')
-        // .then(res => console.log(res))
-        // .catch(err => console.log(err));
+        emailjs.send('service_zeosfkc', 'template_jrqd0yh', 'gYWr46G5g23Qm8e5a')
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
     }
 
     // SET THE ERROR BACK TO EMPTY AFTER 2 SECONDS

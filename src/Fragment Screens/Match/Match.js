@@ -39,12 +39,13 @@ export const Match = () => {
             // CUSTOM EMAIL OBJECT. THIS IS THE EMAIL THAT WILL BE SENT TO THE CAREGIVERS. CHANGE THE TO_EMAIL TO THEIR RESPECTIVE EMAIL
             const info = {
                 message: `Click the link to confirm http://localhost:3000/bookings/confirmation/${clickedUser.userId}`,
-                to_email: 'jazencode@gmail.com', // Change this line with the email of the caregiver. Pass clickedUser.email to automate that
-                from_email: 'Healthcare',
+                to_email: clickedUser.email, // clickedUser.email to automates the email put your own email here to test
+                from_email: 'Dytter',
+                subject: 'Dytter Booking Confirmation'
             }
 
             // SEND THE EMAIL USING EMAIL JS
-            emailjs.send('service_34j7jhp', 'template_6p7p0lz', info, 's4i9jk7PO-pMqAN4h')
+            emailjs.send('service_zeosfkc', 'template_jrqd0yh', info, 'gYWr46G5g23Qm8e5a')
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
 

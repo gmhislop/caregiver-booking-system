@@ -3,9 +3,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { Login } from './pages/Login/Login'
 import { MainPage } from './pages/MainPage/MainPage'
 import { Register } from './pages/Register/Register'
-
 import { useAuth } from './context/AuthContext'
 import { Confirmation } from './Confirmation'
+
 
 export const App = () => {
 
