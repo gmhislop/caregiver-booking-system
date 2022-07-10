@@ -40,9 +40,9 @@ After logging in with your account you can change the emailaddress to your own a
 
 to_email: clickedUser.email, // change clickedUser.email to your own e-mail. clickedUser.email to automates the email put your own email here to test
 
-After that you can register 
+1. Register 
 ![](Screenshot 3.png)
-Login
+2. Login
 ![](Screenshot 2.png)
-View the match page and send a request.
+3. Send a request.
 ![](Screenshot.png)
