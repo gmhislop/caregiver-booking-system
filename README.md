@@ -33,7 +33,6 @@ Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
 =======
 * You can log in or create an account via the Login page. In addition, a test account can also be used:<br>
 	username test@test.nl<br>
->>>>>>> fc7e9504a519db6d9c1bdd9d9979e24344b29b3c
 	password: Test123!
 * Creating an account requires a unique username, unique email address and password.
 * After creating an account, you can log in to the web application.
@@ -43,20 +42,15 @@ Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
 ### TESTING
 After logging in with your account you can change the emailaddress to your own at ./match page line 42.
 
-to_email: clickedUser.email, // change clickedUser.email to your own e-mail. clickedUser.email to automates the email put your own email here to test
+'to_email: clickedUser.email,' // change 'clickedUser.email' to your own e-mail. 'clickedUser.email' to automates the email put your own email here to test
 
-<<<<<<< HEAD
-1. Register 
-![](Screenshot 3.png)
-2. Login
-![](Screenshot 2.png)
-3. Send a request.
-![](Screenshot.png)
 =======
 After that you can register 
-![](Screenshot 3.png)
-Login
-![](Screenshot 2.png)
+<a href="" rel="screenshot register"><img src="https://github.com/gmhislop/caregiver-booking-system/blob/d709aed7241da4a09e01914522100831d527647a/src/assets/Screenshot%203.png" alt="" /></a>
+
+2. Login
+
+<a href="" rel="send request"><img src="https://github.com/gmhislop/caregiver-booking-system/blob/d709aed7241da4a09e01914522100831d527647a/src/assets/Screenshot%202.png" alt="" /></a>
+3. Send request
 View the match page and send a request.
-![](Screenshot.png)
->>>>>>> fc7e9504a519db6d9c1bdd9d9979e24344b29b3c
+<a href="" rel="send request"><img src="https://github.com/gmhislop/caregiver-booking-system/blob/d709aed7241da4a09e01914522100831d527647a/src/assets/Screenshot.png" alt="" /></a>
