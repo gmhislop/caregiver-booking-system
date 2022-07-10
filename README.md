@@ -27,8 +27,8 @@ Example: REACT_APP_MY_API_KEY={{INSERT_APIKEY}}
 
 ### Application Guide
 * The homepage overview of recently made bookings and top performing care providers.
-* You can log in or create an account via the Login page. In addition, a test account can also be used:
-	username test@test.nl
+* You can log in or create an account via the Login page. In addition, a test account can also be used:<br>
+	username test@test.nl<br>
 	password: Test123!
 * Creating an account requires a unique username, unique email address and password.
 * After creating an account, you can log in to the web application.
