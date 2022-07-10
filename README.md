@@ -54,3 +54,4 @@ After that you can register
 3. Send request
 View the match page and send a request.
 <a href="" rel="send request"><img src="https://github.com/gmhislop/caregiver-booking-system/blob/d709aed7241da4a09e01914522100831d527647a/src/assets/Screenshot.png" alt="" /></a>
+4. After sending a request you will receive a confirmation mail.
