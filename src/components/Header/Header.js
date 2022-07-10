@@ -1,7 +1,7 @@
 import React from 'react'
 import './header.css'
 
-// ADD A HEADER IF YPU WANT
+// ROOM FOR HEADER
 
 export const Header = () => {
     return (
