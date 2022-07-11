@@ -28,12 +28,16 @@ Example: `REACT_APP_MY_API_KEY={{INSERT_APIKEY}}`
 ### Application Guide
 * The homepage overview of recently made bookings and top performing care providers.
 * You can log in or create an account via the Login page. In addition, a test account can also be used:<br>
-	`username test@test.nl`<br>
-	`password: Test123!`
+	`username:` test@test.nl<br>
+	`password:` Test123!
 * Creating an account requires a unique username, unique email address and password.
 * After creating an account, you can log in to the web application.
 * Services can be assigned to available care providers via the broking platform.
 * When the caregiver accepts this service, the booking status will change to confirmed.
+* For access to the database you can use the following information:<br>
+	`username:` officialalldey@gmail.com<br>
+	`password:` #ADamsterdam2020
+	
 
 ### TESTING
 After logging in with your account you can change the emailaddress to your own at ./match page line 42.
