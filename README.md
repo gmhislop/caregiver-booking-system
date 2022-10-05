@@ -35,8 +35,7 @@ Example: `REACT_APP_MY_API_KEY={{INSERT_APIKEY}}`
 * Services can be assigned to available care providers via the broking platform.
 * When the caregiver accepts this service, the booking status will change to confirmed.
 * For access to the database you can use the following information:<br>
-	`username:` officialalldey@gmail.com<br>
-	`password:` #ADamsterdam2020
+
 	
 
 ### TESTING
